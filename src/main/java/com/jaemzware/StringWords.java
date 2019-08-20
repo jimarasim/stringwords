@@ -12,7 +12,7 @@ public class StringWords
 {
     public static void main( String[] args )
     {
-        List<String> words = getAllCombinationsOfEnglishWords(args[0]);
+        List<String> words = getAllCombinationsOfEnglishWords(String.join(" ", args));
 
         for(String word: words) {
             System.out.println(word);
