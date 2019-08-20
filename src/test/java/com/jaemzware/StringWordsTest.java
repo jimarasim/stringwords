@@ -13,8 +13,9 @@ public class StringWordsTest {
 
         List<String> words = StringWords.getAllCombinationsOfEnglishWords("it");
 
-        assertTrue(words.size()==1);
-        assertTrue( words.get(0) == "it");
+        assertTrue(words.size()==2);
+        assertTrue( words.contains("it"));
+        assertTrue( words.contains("i"));
     }
 
     @Test
@@ -34,8 +35,9 @@ public class StringWordsTest {
 
         List<String> words = StringWords.getAllCombinationsOfEnglishWords("ti");
 
-        assertTrue(words.size()==1);
-        assertTrue(words.get(0)=="it");
+        assertTrue(words.size()==2);
+        assertTrue( words.contains("it"));
+        assertTrue( words.contains("i"));
     }
 
     @Test
@@ -71,7 +73,7 @@ public class StringWordsTest {
 
         List<String> words = StringWords.getAllCombinationsOfEnglishWords("ad hoc");
 
-        assertTrue(words.size()==0);
+        assertTrue(words.size()==4);
         assertTrue(words.contains("ad hoc"));
         assertTrue(words.contains("cad"));
         assertTrue(words.contains("a"));

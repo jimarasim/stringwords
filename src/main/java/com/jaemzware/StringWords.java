@@ -12,10 +12,10 @@ public class StringWords
 {
     public static void main( String[] args )
     {
-        List<String> combinations = getAllCombinationsOfEnglishWords(args[0]);
+        List<String> words = getAllCombinationsOfEnglishWords(args[0]);
 
-        for(String combination: combinations) {
-            System.out.println(combination);
+        for(String word: words) {
+            System.out.println(word);
         }
 
     }
@@ -23,12 +23,14 @@ public class StringWords
     public static List<String> getAllCombinationsOfEnglishWords(String word) {
 
         //get string combinations, using a hash to remove the duplicates
-        List<String> combinations = new ArrayList<>(new HashSet<>(generateAllStringCombinations(word)));
+        List<String> combinations = new ArrayList(new HashSet<>(generateAllStringCombinations(word)));
 
         //remove non-english words
-        for(String combination: combinations) {
-            if(!Dictionary.isEnglishWord(combination)) {
-                combinations.remove(combination);
+        Iterator<String> iterator = combinations.iterator();
+        while(iterator.hasNext()) {
+            String string = iterator.next();
+            if(!Dictionary.isEnglishWord(string)) {
+                iterator.remove();
             }
         }
 
